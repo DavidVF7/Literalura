@@ -1,9 +1,8 @@
-
 <p align="center">
-  <img src="https://github.com/TU_USUARIO/TU_REPOSITORIO/assets/TU_IMAGEN"
+  <img src="https://github.com/DavidVF7/Literalura/assets/103916971/6966b0be-98cc-4571-a3b6-e48c3ded7d11"
 </p>
 
-# Gestor de Libros 📚
+# Literalura 📚
 
 Desarrollado como parte del Challenge de gestión de libros, impuesto por Alura Latam en colaboración con Oracle en el programa ONE, como parte de la especialización Back-End.
 
@@ -20,7 +19,7 @@ Este proyecto es un Gestor de Libros desarrollado en Java que te permite buscar 
 - **Control de Versiones:** Git/GitHub se usaron para el control de versiones del proyecto y la colaboración en equipo.
 - **Entorno de Desarrollo Integrado (IDE):** IntelliJ IDEA fue el entorno de desarrollo utilizado para escribir, depurar y ejecutar el código Java.
 
-## Clases y Funcionalidades 🧩
+## Funcionalidades 🧩
 
 ### Principal.java
 
@@ -50,8 +49,54 @@ Esta clase se encarga de convertir los datos obtenidos de la API para su uso en 
 
 Interfaz que maneja las operaciones de la base de datos relacionadas con los autores.
 
+## Clases Modelo y Mapeo de Entidades 🗃️
+
+En este proyecto, utilizamos varias clases modelo para representar las entidades del dominio, como autores y libros. Estas clases están mapeadas a tablas de la base de datos utilizando JPA (Java Persistence API).
+
+### Autor.java
+
+La clase `Autor` representa la entidad "Autor" en la base de datos. Esta clase incluye atributos como el nombre del autor, su fecha de nacimiento y fallecimiento, así como una lista de libros asociados. La relación entre autores y libros se gestiona mediante una asociación de uno a muchos.
+
+#### Atributos principales:
+- **id**: Identificador único del autor.
+- **nombre**: Nombre del autor.
+- **fechaDeNacimiento**: Año de nacimiento del autor.
+- **fechaDeFallecimiento**: Año de fallecimiento del autor (puede ser nulo si el autor está vivo).
+- **libros**: Lista de libros escritos por el autor.
+
+### Datos.java
+
+La clase `Datos` se utiliza para mapear la estructura JSON de la respuesta de la API. Esta clase contiene el total de resultados y una lista de libros obtenidos de la API.
+
+#### Atributos principales:
+- **total**: Número total de resultados.
+- **libros**: Lista de objetos `DatosLibro` que representan los libros obtenidos de la API.
+
+### DatosLibro.java
+
+La clase `DatosLibro` representa la información de un libro obtenida de la API. Esta clase incluye atributos como el título del libro, una lista de autores, los idiomas en los que está disponible y el número de descargas.
+
+#### Atributos principales:
+- **titulo**: Título del libro.
+- **autores**: Lista de objetos `DatosAutor` que representan los autores del libro.
+- **idiomas**: Lista de idiomas en los que está disponible el libro.
+- **numeroDeDescargas**: Número de descargas del libro.
+
+### Mapeo de Entidades
+
+Utilizamos las siguientes anotaciones de JPA para mapear las clases modelo a tablas de la base de datos:
+
+- **@Entity**: Marca una clase como una entidad JPA.
+- **@Table**: Especifica la tabla de la base de datos con la que se va a mapear la entidad.
+- **@Id**: Indica el campo que es la clave primaria.
+- **@GeneratedValue**: Define la estrategia de generación de valores para la clave primaria.
+- **@Column**: Especifica el mapeo de una columna en la tabla de base de datos.
+- **@OneToMany**: Define una relación uno a muchos entre dos entidades.
+
+Estas anotaciones permiten que las clases de modelo se conviertan en entidades persistentes en una base de datos relacional, facilitando la interacción con la base de datos a través de repositorios y servicios.
+
 ## 👨‍💻 Desarrollado por
-- [Tu Nombre]
+- David Velasco Fierros
 
 ## Instrucciones de Uso 🚀
 
@@ -63,7 +108,7 @@ Interfaz que maneja las operaciones de la base de datos relacionadas con los aut
 
 ¡Disfruta gestionando tu biblioteca de libros!
 
-## ¿Cómo funciona? 🎥
+## 📷 Capturas de pantalla
 Aquí puedes ver una demostración visual de cómo funciona el proyecto:
 
-[Demostración del proyecto](URL_DE_TU_VIDEO)
+
